@@ -24,25 +24,35 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
+This is a application for simulate a famous API called pokedex using [Nest](https://github.com/nestjs/nest) and tools such as: 
+* [TypeScript](https://www.typescriptlang.org/)
+* [MongoDB](https://www.mongodb.com/)
+* [Mongoose](https://mongoosejs.com/)
+* [Express](https://expressjs.com/)
+## Start in local
+## Installations
 
 ```bash
-$ npm install
+$ npm install or yarn install
+$ yarn global add nest/cli or npm install -g nest/cli
+```
+## Up mongodb
+
+```bash
+$ docker compose up -d
 ```
 
 ## Running the app
 
 ```bash
 # development
-$ npm run start
+$ npm run start or yarn start
 
 # watch mode
-$ npm run start:dev
+$ npm run start:dev or yarn start:dev
 
 # production mode
-$ npm run start:prod
+$ npm run start:prod or yarn start:prod
 ```
 
 ## Test
@@ -58,7 +68,7 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
+## 
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
