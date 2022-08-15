@@ -56,11 +56,6 @@ export class PokemonService {
       // find pokemon
       const pokemon = await this.findOne(criteria);
       // return exception if not found
-      if (!pokemon) {
-        throw new NotFoundException(
-          `Pokemon not found with id, code or name: ${criteria}`,
-        );
-      }
       if (updatePokemonDto.name) {
         updatePokemonDto.name = updatePokemonDto.name.toLowerCase();
       }
@@ -71,8 +66,12 @@ export class PokemonService {
     }
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} pokemon`;
+  async remove(id: string) {
+    const result = await this.pokemonModel.deleteOne({ _id: id });
+    if (result.deletedCount === 0) {
+      throw new NotFoundException(`Pokemon not found with id: ${id}`);
+    }
+    return { message: 'Pokemon deleted' };
   }
 
   private handleException(error: any) {
